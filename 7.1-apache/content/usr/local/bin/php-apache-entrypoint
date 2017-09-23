@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-sendmail-setup
-
 set -e
+
+sendmail-setup
 
 if [ "$1" = "memcached" ]; then
 
