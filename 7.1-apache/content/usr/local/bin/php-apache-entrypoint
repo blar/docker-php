@@ -4,7 +4,7 @@ set -e
 
 sendmail-setup
 
-if [ "$1" = "memcached" ]; then
+if [ "$1" = "httpd" ]; then
 
     set -- "$@" -DFOREGROUND
 
