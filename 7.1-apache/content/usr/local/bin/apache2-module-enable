@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -e
+
+for module in $@; do
+    echo Enable apache module "$module"
+    echo ln -svf /etc/apache2/modules-available/$module.* /etc/apache2/modules-available/
+done

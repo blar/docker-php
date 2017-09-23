@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+set -x
+
+# https://getcomposer.org/download/
+wget https://getcomposer.org/download/1.5.2/composer.phar -O /usr/local/bin/composer
+chmod +x /usr/local/bin/composer
+
+# https://phar.phpunit.de/
+wget https://phar.phpunit.de/phpunit-6.3.0.phar -O /usr/local/bin/phpunit
+chmod +x /usr/local/bin/phpunit

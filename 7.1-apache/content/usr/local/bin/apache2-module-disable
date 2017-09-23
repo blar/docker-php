@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+set -e
+
+for module in $@; do
+    echo Disable apache module "$module"
+    rm -v /etc/apache2/modules-enabled/$module.*
+done

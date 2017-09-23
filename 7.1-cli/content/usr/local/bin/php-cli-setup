@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+apk update
+apk-add-recipe /var/local/recipe/php-7.1-cli.recipe
+apk-cache-flush

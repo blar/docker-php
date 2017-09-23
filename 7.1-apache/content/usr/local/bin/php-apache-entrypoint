@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+sendmail-setup
+
+set -e
+
+if [ "$1" = "memcached" ]; then
+
+    set -- "$@" -DFOREGROUND
+
+fi; 
+
+exec "$@"
