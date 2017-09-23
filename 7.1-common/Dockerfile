@@ -1,5 +1,5 @@
 FROM foobox/common:latest
-LABEL maintainer="andreas.treichel@twofour.de"
+LABEL maintainer="gmblar+github@gmail.com"
 WORKDIR /var/www/html
 
 ENV PHP_TIME_LIMIT=10
