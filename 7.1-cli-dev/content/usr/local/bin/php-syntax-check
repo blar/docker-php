@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -e
+
+directory=${1:-.}
+
+find $directory -type f -name "*.php" -not -path '*vendor*' -print0 | xargs -0 -n 4 php -l
