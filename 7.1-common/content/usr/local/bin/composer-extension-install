@@ -10,4 +10,6 @@ fi
 
 extensions=$(composer-extension-extract $composer_file)
 echo Found php extensions $extensions in $composer_file
+apk update
 echo $extensions | xargs -t apk add
+apk-cache-flush
