@@ -52,6 +52,16 @@ gestartet wurde. Unter foobox/php:7.1-cli, dass für Cronjobs verwendet werden k
 
 Standardwert: 64M
 
+### APPLICATION_ENV
+
+Sollte die Umgebungsvariable APPLICATION_ENV nicht den Wert ``production`` haben, so wird per ``mod_alias`` unter
+``/robots.txt`` verfügbar sein, die alle Suchmaschinenzugriffe verbietet. Zusätzlich wird per ``mod_headers`` ein Header
+``X-Robots-Tag``  mit dem Wert ``noindex, nofollow, noarchive, nosnippet, noodp, noimageindex`` gesetzt. Auch werden die
+Cachezeiten per ``mod_expires`` auf maximal eine Minute gesetzt damit Änderungen während der Entwicklung schneller
+sichtbar werden.
+
+Diese Einstellung wird aktuell nur von foobox/php:7.1-apache verwendet.
+
 
 ## Images
 
