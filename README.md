@@ -9,10 +9,15 @@ verschiedenen Hosts verwenden zu können. Auch bleiben die Sessiondaten bei eine
 
 Es muss ein Host ``memcache`` im Stack verfügbar sein. Hier kann z.B. ``foobox/memcached`` verwendet werden.
 
+
 ## Umgebungsvariablen
 
 Folgende Umgebungsvariblen können beim Starten des Containers übergeben werden, damit diese Einstellungen von PHP
 übernommen werden.
+
+Sollte ein bestimmter Bereich (wie Admin) der Seite ein höheres Limit benötigen, so sollte zuerst versucht werden einen
+weiteren Container mit einem höheren Limit zu starten, der nur für diesen Bereich zuständig ist. Hierfür muss der Pfad
+mit den höheren Anforderungen im Loadbalancer auf den weiteren Container zeigen.
 
 ### PHP_TIME_LIMIT
 
@@ -40,6 +45,10 @@ aufgeteilt um Änderungen zu erleichtern.
 ### foobox/php:7.1-apache
 
 ``foobox/php:7.1-apache`` enthält einen Apache 2.4 als Webserver und PHP 7.1 als Modul um Anwendungen auszuführen.
+
+Dieses Image enthält ONBUILD-Anweisungen in der Dockerfile, damit das aktuelle Verzeichnis in das nächste Image kopiert
+wird und falls eine Datei ``/var/www/html/composer.json`` existiert, werden die benötigten PHP-Erweiterungen automatisch
+per ``apk`` installiert.
 
 ### foobox/php:7.1-cli
 
