@@ -1,5 +1,24 @@
 # PHP für Docker
 
+## Befehle
+
+### composer-extension-install
+
+Prüft ob eine Datei ``/var/www/html/composer.json`` existiert und installiert benötigte PHP-Erweiterungen per ``apk``.
+
+### php-syntax-check
+
+Geht ein Verzeichnis rekursiv durch und prüft die darin enthaltenen PHP-Dateien auf korrekten Syntax.
+
+### apache2-module-enable
+
+Aktiviert ein Modul, dass sich in /etc/apache2/modules-available befindet. Ist im Image foobox/php:7.1-apache verfügbar.
+
+### apache2-module-disable
+
+Deaktiviert ein Modul, dass sich in /etc/apache2/modules-enable befindet. Ist im Image foobox/php:7.1-apache verfügbar.
+
+
 ## Einstellungen
 
 ### Sessions
@@ -45,10 +64,6 @@ aufgeteilt um Änderungen zu erleichtern.
 ### foobox/php:7.1-apache
 
 ``foobox/php:7.1-apache`` enthält einen Apache 2.4 als Webserver und PHP 7.1 als Modul um Anwendungen auszuführen.
-
-Dieses Image enthält ONBUILD-Anweisungen in der Dockerfile, damit das aktuelle Verzeichnis in das nächste Image kopiert
-wird und falls eine Datei ``/var/www/html/composer.json`` existiert, werden die benötigten PHP-Erweiterungen automatisch
-per ``apk`` installiert.
 
 ### foobox/php:7.1-cli
 
