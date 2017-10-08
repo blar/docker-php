@@ -5,7 +5,7 @@ composer_file=/var/www/html/composer.json
 echo Try to install php extensions from $composer_file
 if [ ! -f "$composer_file" ]; then
     echo Missing $composer_file. Skip install >&2
-    exit 1
+    exit 0
 fi
 
 extensions=$(composer-extension-extract $composer_file)
