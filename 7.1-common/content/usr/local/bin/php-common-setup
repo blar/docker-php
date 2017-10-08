@@ -2,6 +2,10 @@
 
 apk update
 apk-add-recipe /var/local/recipe/php-7.1-common.recipe
+
+# Add jq for composer-extension-* commands.
+apk add jq
+
 apk-cache-flush
 
 mkdir -p /var/www/html/htdocs

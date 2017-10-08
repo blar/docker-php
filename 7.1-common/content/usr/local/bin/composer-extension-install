@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+set -e
+
+composer_file=/var/www/html/composer.json
+
+if [ ! -f "$composer_file" ]; then
+    echo $composer_file not found.
+    exit 0
+fi
+
+extensions=$(composer-extension-extract $composer_file)
+echo Found php extensions $extensions in $composer_file
+echo $extensions | xargs -t apk add
