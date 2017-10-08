@@ -2,8 +2,6 @@
 
 set -e
 
-sendmail-setup
-
 if [ "$1" = "httpd" ]; then
 
     set -- "$@" -DFOREGROUND
