@@ -2,6 +2,11 @@
 
 set -x
 
+# Im Paket findutils sind befindet sich die GNU-Versionen von:
+# xargs um mehrere Prozesse auf einmal auszuführen
+# find mit der Option -xtype um den Typ des Linkziels zu ermitteln und so kaputten Linkziele auszuschliessen
+apk add findutils
+
 # https://getcomposer.org/download/
 wget https://getcomposer.org/download/1.5.2/composer.phar -O /usr/local/bin/composer
 chmod +x /usr/local/bin/composer
