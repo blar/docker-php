@@ -1,8 +1,6 @@
 FROM foobox/php:7.1-common
 LABEL maintainer="gmblar+github@gmail.com"
-
-ONBUILD COPY . /var/www/html
-ONBUILD RUN composer-extension-install
+EXPOSE 80
 
 COPY content /
 RUN php-apache-setup
