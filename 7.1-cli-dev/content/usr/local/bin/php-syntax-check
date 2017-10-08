@@ -4,4 +4,4 @@ set -e
 
 directory=${1:-.}
 
-find $directory -type f -name "*.php" -not -path '*vendor*' -print0 | xargs -0 -L 1 -n 4 php -l
+find $directory -xtype f -name "*.php" -not -path '*vendor*' -print0 | xargs -0 -L 1 -n 4 php -l
