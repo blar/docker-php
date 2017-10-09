@@ -12,6 +12,9 @@ apk add findutils
 # composer und phpunit benötigen phar-support.
 apk add php7-phar
 
+# composer benötigt evtl. git
+apk add git
+
 apk-cache-flush
 
 # https://getcomposer.org/download/
