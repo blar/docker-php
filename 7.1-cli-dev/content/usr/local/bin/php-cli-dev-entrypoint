@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+if [ "$SSH_PRIVATE_KEY" ]; then
+    eval $(ssh-agent -s)
+    mkdir -p ~/.ssh
+    echo $SSH_PRIVATE_KEY > ~/.ssh/id_rsa
+    chmod 600 ~/.ssh/id_rsa
+    ssh-add ~/.ssh/id_rsa
+    echo -e "Host *\nStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+fi
+
+exec "$@"
