@@ -9,6 +9,9 @@ apk update
 # find mit der Option -xtype um den Typ des Linkziels zu ermitteln und so kaputten Linkziele auszuschliessen
 apk add findutils
 
+# composer und phpunit benötigen phar-support.
+apk add php7-phar
+
 apk-cache-flush
 
 # https://getcomposer.org/download/
