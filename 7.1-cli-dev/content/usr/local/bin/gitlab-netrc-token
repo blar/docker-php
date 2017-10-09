@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+# Dies wird benutzt um Repositories über HTTP mit dem CI_BUILD_TOKEN zu clonen.
+
+if [ -z "$CI_BUILD_TOKEN" ]; then
+    echo No environment variable found CI_BUILD_TOKEN >&2
+    exit 0
+fi
+
+gitlab_hostname=$(gitlab-hostname)
+
+if [ -z "$gitlab_hostname" ]; then
+    echo Cannot find Gitlab-Url >&2
+    exit 0
+fi 
+
+echo -e "machine ${gitlab_hostname}\nlogin gitlab-ci-token\npassword ${CI_BUILD_TOKEN}\n" > ~/.netrc
