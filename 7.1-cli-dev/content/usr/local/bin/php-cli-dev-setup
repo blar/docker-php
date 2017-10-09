@@ -12,8 +12,14 @@ apk add findutils
 # composer und phpunit benötigen phar-support.
 apk add php7-phar
 
+# composer muss Verbindungen per HTTPS ausbauen können.
+apk add php7-openssl
+
 # composer benötigt evtl. git
 apk add git
+
+# composer benötigt openssh um Projekte per git zu clonen.
+apk add openssh
 
 apk-cache-flush
 
