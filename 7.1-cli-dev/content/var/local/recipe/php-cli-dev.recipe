@@ -1,0 +1,16 @@
+# Im Paket findutils sind befindet sich die GNU-Versionen von:
+# xargs um mehrere Prozesse auf einmal auszuführen
+# find mit der Option -xtype um den Typ des Linkziels zu ermitteln und so kaputten Linkziele auszuschliessen
+findutils
+
+# composer und phpunit benötigen phar-support.
+php7-phar
+
+# composer muss Verbindungen per HTTPS ausbauen können.
+php7-openssl
+
+# composer benötigt evtl. git
+git
+
+# composer benötigt openssh um Projekte per git zu clonen.
+openssh

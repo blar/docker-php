@@ -5,4 +5,4 @@ COPY content /
 RUN php-cli-dev-setup
 
 ENTRYPOINT ["php-cli-dev-entrypoint"]
-CMD ["sh"]
+

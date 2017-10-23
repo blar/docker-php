@@ -3,24 +3,7 @@
 set -x
 
 apk update
-
-# Im Paket findutils sind befindet sich die GNU-Versionen von:
-# xargs um mehrere Prozesse auf einmal auszuführen
-# find mit der Option -xtype um den Typ des Linkziels zu ermitteln und so kaputten Linkziele auszuschliessen
-apk add findutils
-
-# composer und phpunit benötigen phar-support.
-apk add php7-phar
-
-# composer muss Verbindungen per HTTPS ausbauen können.
-apk add php7-openssl
-
-# composer benötigt evtl. git
-apk add git
-
-# composer benötigt openssh um Projekte per git zu clonen.
-apk add openssh
-
+apk-add-recipe /var/local/recipe/php-cli-dev.recipe
 apk-cache-flush
 
 # https://getcomposer.org/download/
