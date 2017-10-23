@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+set -e
+
+apache2-module-enable alias_development
+composer-extension-install
+
+if [ "$1" = "httpd" ]; then
+
+    set -- "$@" -DFOREGROUND
+
+fi; 
+
+exec "$@"

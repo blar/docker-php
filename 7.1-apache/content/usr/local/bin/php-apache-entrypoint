@@ -6,7 +6,6 @@ if [ "$APPLICATION_ENV" != "production" ]; then
     echo "alias_development wird aktiviert, da die Umgebungsvariable APPLICATION_ENV nicht 'production' ist" >&2
     # Da Alias nicht in einem If-Block gültig ist, muss dies im entrypoint aktiviert werden.
     apache2-module-enable alias_development
-    composer-extension-install
 fi
 
 if [ "$1" = "httpd" ]; then

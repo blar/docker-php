@@ -1,9 +1,13 @@
+# Add jq for composer-extension-* commands.
+jq
+
 php7-apcu
 php7-iconv
 php7-json
 php7-mbstring
 php7-memcached
 php7-mysqlnd
+php7-mysqli
 php7-opcache
 php7-pdo_mysql
 php7-session

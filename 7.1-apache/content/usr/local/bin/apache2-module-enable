@@ -4,5 +4,5 @@ set -e
 
 for module in $@; do
     echo Enable apache module "$module"
-    ln -svf /etc/apache2/modules-available/$module.* /etc/apache2/modules-enabled/
+    ln -sf /etc/apache2/modules-available/$module.* /etc/apache2/modules-enabled/
 done

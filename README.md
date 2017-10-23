@@ -52,6 +52,27 @@ gestartet wurde. Unter foobox/php:7.1-cli, dass für Cronjobs verwendet werden k
 
 Standardwert: 64M
 
+### PHP_POST_SIZE_LIMIT
+
+Maximale Grösse des Post-Requests.
+
+Standardwert: 8M
+
+### PHP_UPLOAD_SIZE_LIMIT
+
+Maximale Grösse einer Datei in einem Post-Request.
+
+Standardwert: 8M
+
+### PHP_XDEBUG_REMOTE_HOST
+
+Standardwert: localhost
+
+### PHP_XDEBUG_REMOTE_PORT
+
+Standardwert: 9000
+
+
 ### APPLICATION_ENV
 
 Sollte die Umgebungsvariable APPLICATION_ENV nicht den Wert ``production`` haben, so wird per ``mod_alias`` unter
@@ -74,6 +95,12 @@ aufgeteilt um Änderungen zu erleichtern.
 ### foobox/php:7.1-apache
 
 ``foobox/php:7.1-apache`` enthält einen Apache 2.4 als Webserver und PHP 7.1 als Modul um Anwendungen auszuführen.
+
+### foobox/php:7.1-apache-dev
+
+``foobox/php:7.1-apache-dev`` ist eine Erweiterung zu ``foobox/php:7.1-apache`` und enthält ``xdebug``. In der
+[Dokumentation von xdebug zum Debugging](https://xdebug.org/docs/remote) gibt es auch eine Liste von
+Browsererweiterungen mit denen das Remote-Debugging aktiviert werden kann, damit sich PHP z.B. zu PHPStorm verbindet.
 
 ### foobox/php:7.1-cli
 
