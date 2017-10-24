@@ -67,9 +67,9 @@ Standardwert: 8M
 ### PHP_XDEBUG_REMOTE_HOST
 
 Host zu dem sich xdebug verbinden soll. Da die IP des Hostsystems evtl. nicht direkt direkt verfügbar ist, kann eine
-Umgebungsvariable auf dem Hostsystem per ``PHP_XDEBUG_REMOTE_HOST`` z.B. in der Datei ``~/.bashrc`` definiert werden und
-dem Container ``foobox/php:7.1-apache-dev`` beim Starten übergeben werden, damit xdebug sich zum gewünschten Host
-verbinden kann.
+Umgebungsvariable auf dem Hostsystem per ``PHP_XDEBUG_REMOTE_HOST=$(hostname)`` z.B. in der Datei ``~/.bashrc`` definiert
+werden und dem Container ``foobox/php:7.1-apache-dev`` beim Starten übergeben werden, damit xdebug sich zum gewünschten
+Host verbinden kann.
 
 Der Standardwert ``localhost`` könnte nur funktionieren, falls der Container mit ``--net=host`` gestartet wurde.
 
