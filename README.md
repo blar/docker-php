@@ -66,11 +66,32 @@ Standardwert: 8M
 
 ### PHP_XDEBUG_REMOTE_HOST
 
+Host zu dem sich xdebug verbinden soll. Da die IP des Hostsystems evtl. nicht direkt direkt verfügbar ist, kann eine
+Umgebungsvariable auf dem Hostsystem per ``PHP_XDEBUG_REMOTE_HOST`` z.B. in der Datei ``~/.bashrc`` definiert werden und
+dem Container ``foobox/php:7.1-apache-dev`` beim Starten übergeben werden, damit xdebug sich zum gewünschten Host
+verbinden kann.
+
+Der Standardwert ``localhost`` könnte nur funktionieren, falls der Container mit ``--net=host`` gestartet wurde.
+
 Standardwert: localhost
 
 ### PHP_XDEBUG_REMOTE_PORT
 
+Wird von ``foobox/php:7.1-apache-dev`` verwendet.
+
 Standardwert: 9000
+
+### PHP_XDEBUG_PROFILE_PATH
+
+Der Pfad unter dem die Ergebnisse des Profilers gespeichert werden sollen. Der Profiler kann über die GET oder POST-Variable
+``XDEBUG_PROFILE`` aktiviert werden. Diese Dateien können sehr viel Speicherplatz benötigen und sollten regelmässig
+gelöscht werden, falls diese nicht mehr benötigt werden.
+
+https://xdebug.org/docs/profiler
+
+Wird von ``foobox/php:7.1-apache-dev`` verwendet.
+
+Standardwert: /tmp
 
 
 ### APPLICATION_ENV
