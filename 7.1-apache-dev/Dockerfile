@@ -3,6 +3,7 @@ LABEL maintainer="gmblar+github@gmail.com"
 
 ENV PHP_XDEBUG_REMOTE_HOST=localhost
 ENV PHP_XDEBUG_REMOTE_PORT=9000
+ENV PHP_XDEBUG_PROFILE_PATH=/tmp
 
 COPY content /
 RUN php-apache-dev-setup
