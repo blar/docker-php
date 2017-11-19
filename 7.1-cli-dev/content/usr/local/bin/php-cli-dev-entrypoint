@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-gitlab-netrc-token
+gitlab-netrc-add
 ssh-key-environment
 
 exec "$@"
