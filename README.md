@@ -43,7 +43,13 @@ mit den höheren Anforderungen im Loadbalancer auf den weiteren Container zeigen
 Die maximale Laufzeit eines PHP-Scripts in Sekunden, falls dieses über foobox/php:7.1-apache oder foobox/php:7.1-fpm
 gestartet wurde. Unter foobox/php:7.1-cli, dass für Cronjobs verwendet werden kann wird dieses Limit ignoriert.
 
-Standardwert: 10
+Standardwert: 10 (Sekunden)
+
+### PHP_INPUT_TIME_LIMIT
+
+Maximale Zeit die zum Parsen der GET und POST-Parameter erlaubt ist.
+
+Standardwert: 10 (Sekunden)
 
 ### PHP_MEMORY_LIMIT
 
