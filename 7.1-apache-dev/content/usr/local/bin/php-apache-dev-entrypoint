@@ -5,6 +5,8 @@ set -e
 apache2-module-enable alias_development
 composer-extension-install
 
+export PHP_XDEBUG_REMOTE_HOST=${PHP_XDEBUG_REMOTE_HOST:-$(docker-host-address)}
+
 if [ "$1" = "httpd" ]; then
 
     set -- "$@" -DFOREGROUND
