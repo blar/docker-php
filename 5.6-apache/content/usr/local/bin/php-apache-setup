@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+set -e
+
+apk update
+apk-add-recipe /var/local/recipe/php-apache.recipe
+apk-cache-flush
+
+# pid vom Apache kann sonst nicht angelegt werden.
+mkdir /run/apache2
+
+apache2-module-enable alias deflate expires headers mime log_config dir

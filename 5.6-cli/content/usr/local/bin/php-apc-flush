@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+php -r "apcu_clear_cache();"

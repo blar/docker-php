@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+# Extract php extension dependencies from composer.json and replace "ext-" with
+# "php7-" to match alpine package names. This scripts only supports "=", ">",
+# "<" or ">=" in the version constraint.
+
+# Missing version on some extensions
+# jq '.require | to_entries[] | select(.key | contains("ext-")) | ( .key | sub("ext-"; "php7-")) + .value' $1
+
+jq '.require | to_entries[] | select(.key | contains("ext-")) | ( .key | sub("ext-"; "php7-"))' $1

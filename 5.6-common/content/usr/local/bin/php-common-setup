@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+set -e
+apk update
+apk-add-recipe /var/local/recipe/php-common.recipe
+apk-cache-flush
+
+mkdir -p /var/www/html/htdocs
+
+apk add --no-cache -t .build php5-dev make g++ autoconf zlib-dev libmemcached-dev cyrus-sasl-dev
+apk add --no-cache zlib libmemcached
+
+cd /tmp
+wget http://pecl.php.net/get/memcached-2.2.0.tgz
+tar -xvf memcached-2.2.0.tgz
+cd memcached-2.2.0
+
+phpize5
+./configure --with-php-config=/usr/bin/php-config5 --disable-memcached-sasl
+make -j 16
+make install
+apk del .build
+rm -rf /tmp/*
+
+ln -s /usr/bin/php5 /usr/bin/php
